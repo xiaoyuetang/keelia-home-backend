@@ -13,6 +13,11 @@ const connection = mongoose.connection;
 connection.once("open", function() {
   console.log("MongoDB database connection established successfully");
 });
+
+app.get("/", function(req, res) {
+  res.send("GET/");
+});
+
 todoRoutes.route("/").get(function(req, res) {
   Todo.find(function(err, todos) {
     if (err) {
@@ -55,6 +60,7 @@ todoRoutes.route("/add").post(function(req, res) {
     });
 });
 app.use("/todos", todoRoutes);
+
 app.listen(PORT, function() {
   console.log("Server is running on Port: " + PORT);
 });
