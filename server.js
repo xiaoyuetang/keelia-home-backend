@@ -16,11 +16,11 @@ connection.once("open", function() {
 });
 
 app.get("/", function(req, res) {
-  res.send("GET method");
+  res.redirect("/todos");
 });
 
 app.post("/", function(req, res) {
-  res.send("POST method");
+  res.redirect("/todos");
 });
 
 todoRoutes.get("/", function(req, res) {
