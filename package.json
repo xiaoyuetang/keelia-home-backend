@@ -1,7 +1,6 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "description": "",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -18,5 +17,14 @@
   },
   "devDependencies": {
     "nodemon": "^1.19.1"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xiaoyuetang/keelia-home-backend.git"
+  },
+  "bugs": {
+    "url": "https://github.com/xiaoyuetang/keelia-home-backend/issues"
+  },
+  "homepage": "https://github.com/xiaoyuetang/keelia-home-backend#readme",
+  "description": ""
 }
