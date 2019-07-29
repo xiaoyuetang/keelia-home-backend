@@ -8,9 +8,15 @@ const PORT = process.env.PORT || 4000;
 let Todo = require("./todo.model");
 app.use(cors());
 app.use(bodyParser.json());
-mongoose.connect("mongodb://admin:myadminpassword@192.168.0.100:27017/todos", {
-  useNewUrlParser: true
-});
+const option = {
+  socketTimeoutMS: 30000,
+  keepAlive: true,
+  reconnectTries: 30000
+};
+mongoose.connect(
+  "mongodb://admin:myadminpassword@192.168.0.100:27017/todos",
+  option
+);
 const connection = mongoose.connection;
 
 connection.once("open", function() {
