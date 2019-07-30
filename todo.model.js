@@ -6,6 +6,9 @@ let Todo = new Schema({
   },
   message: {
     type: String
+  },
+  time: {
+    type: Object
   }
 });
 module.exports = mongoose.model("Todo", Todo);

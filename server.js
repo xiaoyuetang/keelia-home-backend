@@ -54,7 +54,8 @@ todoRoutes.post("/update/:id", function(req, res) {
   Todo.findById(req.params.id, function(err, todo) {
     if (!todo) res.status(404).send("data is not found");
     else todo.name = req.body.name;
-    todo.todo_message = req.body.todo_message;
+    todo.message = req.body.message;
+    todo.time = req.body.time;
     todo
       .save()
       .then(todo => {
@@ -67,7 +68,7 @@ todoRoutes.post("/update/:id", function(req, res) {
 });
 
 todoRoutes.delete("/:id", function(req, res) {
-  Bear.remove(
+  Todo.remove(
     {
       _id: req.params.id
     },
