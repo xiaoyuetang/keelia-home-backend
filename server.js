@@ -34,13 +34,15 @@ app.post("/", function(req, res) {
 });
 
 todoRoutes.get("/", function(req, res) {
-  Todo.find.sort({ time: -1 }).exec(function(err, todos) {
-    if (err) {
-      console.log(err);
-    } else {
-      res.json(todos);
-    }
-  });
+  Todo.find({})
+    .sort({ time: -1 })
+    .exec(function(err, todos) {
+      if (err) {
+        console.log(err);
+      } else {
+        res.json(todos);
+      }
+    });
 });
 
 todoRoutes.get("/:id", function(req, res) {
