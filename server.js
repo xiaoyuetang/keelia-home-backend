@@ -13,9 +13,12 @@ const option = {
   keepAlive: true,
   reconnectTries: 30000
 };
-mongoose.connect("mongodb://192.168.20.9:27017/todos", {
-  useNewUrlParser: true
-});
+mongoose.connect(
+  "mongodb+srv://dbUser:tangxiaoyue@cluster0-nh1sr.mongodb.net/test?retryWrites=true&w=majority",
+  {
+    useNewUrlParser: true
+  }
+);
 const connection = mongoose.connection;
 
 connection.once("open", function() {
