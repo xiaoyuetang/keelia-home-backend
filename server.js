@@ -14,7 +14,7 @@ const option = {
   reconnectTries: 30000
 };
 mongoose.connect(
-  "mongodb://admin:myadminpassword@128.134.102.50:27017/todos",
+  "mongodb://admin:myadminpassword@127.0.0.1:27017/todos",
   option
 );
 const connection = mongoose.connection;
