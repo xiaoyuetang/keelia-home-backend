@@ -42,12 +42,14 @@ todoRoutes.get("/", function(req, res) {
     }
   });
 });
+
 todoRoutes.get("/:id", function(req, res) {
   let id = req.params.id;
   Todo.findById(id, function(err, todo) {
     res.json(todo);
   });
 });
+
 todoRoutes.post("/update/:id", function(req, res) {
   Todo.findById(req.params.id, function(err, todo) {
     if (!todo) res.status(404).send("data is not found");
@@ -63,6 +65,20 @@ todoRoutes.post("/update/:id", function(req, res) {
       });
   });
 });
+
+todoRoutes.delete("/:id", function(req, res) {
+  Bear.remove(
+    {
+      _id: req.params.id
+    },
+    function(err, bear) {
+      if (err) res.send(err);
+
+      res.json({ message: "Successfully deleted" });
+    }
+  );
+});
+
 todoRoutes.post("/add", function(req, res) {
   let todo = new Todo(req.body);
   todo
