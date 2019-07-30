@@ -13,10 +13,9 @@ const option = {
   keepAlive: true,
   reconnectTries: 30000
 };
-mongoose.connect(
-  "mongodb://admin:myadminpassword@192.168.20.9:27017/todos",
-  option
-);
+mongoose.connect("mongodb://192.168.20.9:27017/todos", {
+  useNewUrlParser: true
+});
 const connection = mongoose.connection;
 
 connection.once("open", function() {
