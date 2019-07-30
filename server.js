@@ -14,7 +14,7 @@ const option = {
   reconnectTries: 30000
 };
 mongoose.connect(
-  "mongodb://admin:myadminpassword@127.0.0.1:27017/todos",
+  "mongodb://admin:myadminpassword@192.168.20.9:27017/todos",
   option
 );
 const connection = mongoose.connection;
@@ -74,6 +74,6 @@ todoRoutes.post("/add", function(req, res) {
 });
 app.use("/todos", todoRoutes);
 
-app.listen(PORT, function() {
+app.listen(PORT, "0.0.0.0", function() {
   console.log("Server is running on Port: " + PORT);
 });
