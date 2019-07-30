@@ -34,11 +34,11 @@ app.post("/", function(req, res) {
 });
 
 todoRoutes.get("/", function(req, res) {
-  Todo.find(function(err, todos) {
+  Todo.find.sort("-time").exec(function(err, todos) {
     if (err) {
       console.log(err);
     } else {
-      res.json(todos).sort({ time: "desc" });
+      res.json(todos);
     }
   });
 });
