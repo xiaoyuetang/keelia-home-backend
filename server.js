@@ -34,7 +34,7 @@ app.post("/", function(req, res) {
 });
 
 todoRoutes.get("/", function(req, res) {
-  Todo.find.sort("-time").exec(function(err, todos) {
+  Todo.find.sort({ time: -1 }).exec(function(err, todos) {
     if (err) {
       console.log(err);
     } else {
