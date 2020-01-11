@@ -14,7 +14,7 @@ const option = {
   reconnectTries: 30000
 };
 mongoose.connect(
-  "mongodb+srv://dbUser:tangxiaoyue@cluster0-nh1sr.mongodb.net/test?retryWrites=true&w=majority",
+  "mongodb+srv://dbUser:tangxiaoyue@None,
   {
     useNewUrlParser: true
   }
